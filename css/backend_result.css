@@ -1,0 +1,492 @@
+html * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#wave {
+    position: absolute;
+    z-index: -1;
+}
+
+#EXIT {
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-logo {
+    font-weight: 900;
+    font-size: 1.0rem;
+    color: var(--text);
+    text-decoration: none;
+    margin-top: 10%;
+    align-items: center;
+  }
+  
+  #logo-portion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  header {
+    --text: #000000;
+    --text-inverse: #333;
+    --background: transparent;
+    --background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 3em;
+    transition: background 250ms ease-in;
+    background: var(--background);
+    color: var(--text);
+  }
+  
+  .nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav__link {
+    --spacing: 1em;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    padding: calc(var(--spacing) / 2) var(--spacing);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+  }
+  
+  .nav__link:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: var(--spacing);
+    right: var(--spacing);
+    height: 2px;
+    background: currentColor;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: -webkit-transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+  }
+  
+  .nav__link:hover::after {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  
+  .nav__link--btn {
+    border: 1.5px solid currentColor;
+    border-radius: 2em;
+    margin-left: 1em;
+    transition: background 250ms ease-in-out;
+    letter-spacing: 1px;
+    padding: 0.75em 1.5em;
+  }
+  
+  .nav__link--btn:hover {
+    background: var(--text);
+    color: var(--text-inverse);
+    border-color: var(--text);
+  }
+  
+  .nav__link--btn::after {
+    display: none;
+  }
+  .nav__link--btn--highlight:hover {
+    background: var(--text);
+    border-color: var(--text); 
+  }
+  
+  .nav-scrolled {
+    --text-bold: 900;
+    --text: #333; /*variable*/
+    --text-inverse: #f4f4f4; /*variable*/
+    --background: #9cd8c1; /*variable*/
+    --background-color: white;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  }
+  .logo-container {
+      display: flex;
+      align-items: center;
+      flex-grow: 1; /* Allows the logo container to expand */
+  }
+  
+  .logo-container img {
+      height: 50px;
+      margin-right: 20px;
+  }
+  
+  .logo-container span {
+      font-size: 24px;
+      font-weight: bold;
+  }
+  
+  .navbar {
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+  }
+  
+  nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      margin: 0;
+  }
+  
+  nav ul li {
+      margin-right: 20px;
+  }
+
+
+#results {
+    padding-top: 17%;
+    padding-left: 10%;
+    padding-right: 7%;
+}
+
+#results > h4 {
+    font-size: 30px;
+}
+
+#results > h1 {
+    font-size: 54px;
+    color:#3c8a6c;
+    letter-spacing: 10px;
+    text-decoration: underline;
+}
+
+#results > p {
+    font-size: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+
+}
+
+strong {
+    text-decoration: underline;
+}
+
+#careers {
+    background-color: #b7fcb2;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    border-radius: 10px;
+    margin-top: 5%;
+
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 7%;
+    padding-bottom: 5%;
+}
+
+#career-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width: 85%;
+}
+
+
+.career-name-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 3%;
+    font-size: large;
+    align-items: center;
+}
+
+.career-name-container img {
+    width: 50px;
+    height: 50px;
+    margin-right: 3%;
+}
+.career-boxes {
+    background-size: cover;
+    margin: 5px 5px 5px 5px;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.career-boxes p {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 20px;
+    margin-right: 5%;
+    padding-left: 3%;
+    text-align: justify;
+}
+
+#career-title {
+    background-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50vh;
+    border-radius: 10px;
+    width: 15%;
+}
+
+#career-title p {
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+
+    /* IE */
+    -ms-transform: rotate(90deg);
+
+    /* Opera */
+    -o-transform: rotate(90deg);
+
+    font-size: 7em;
+
+}
+
+#career-relevant-resources {
+    background-color: #b7fcb2;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#career-relevant-banner {
+    font-size: 30px;
+    font-weight: 900;
+    background-color: white;
+    background-size: cover;
+    border-radius: 10px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-bottom: 2%;
+}
+
+
+
+#career-relevant-resources {
+    margin-top: 5%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+
+.resource-display {
+    text-align: justify !important;
+    display: flex;
+    align-items: center;
+}
+
+.resource-display img {
+    margin-right: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+#career-expectation {
+    display: flex;
+    margin-top: 3%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#column1 {
+    width: 50%;
+    margin-right: 2%;
+    background-color: #b7fcb2;
+    border-radius: 10px;
+}
+
+#career-pros {
+    font-size: 22px;
+    font-weight: 900;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.career-pros-desc {
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.career-pros-desc p {
+   text-align: center;
+   font-weight: 900;
+   font-size: 18px;
+   padding-top: 5px;
+}
+
+.career-pros-desc ul {
+    padding-bottom: 15px;
+    padding-right: 15px;
+ }
+
+#column2 {
+    width: 50%;
+    background-color: #b7fcb2;
+    border-radius: 10px;
+}
+
+
+.career-responsibilities-desc {
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+ }
+
+.career-responsibilities-desc p {
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+    padding-top: 5px;
+ }
+
+.career-responsibilities-desc ul {
+    padding-bottom: 15px;
+    padding-right: 15px;
+ }
+
+
+
+
+
+/*start of the footer*/
+/*Main.css branded footer stuff*/
+footer {
+    align-items: center;
+  }
+  
+  footer p {
+   font-weight: 600;
+   font-size: 14px;
+  }
+  
+  footer h4 {
+    margin: 0 0 0 0;
+    padding: 40px 0 0 0;
+    font-size: 14px;
+   }
+
+
+  .wrapper {
+    align-items: center;
+    display: inline-flex;
+    list-style: none;
+    width: 100%;
+    padding: 0px 0px 0px 0px !important; /* dont remove the padding setting for the left, inherits a 40px left padding from nowhere. */
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 10%;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  

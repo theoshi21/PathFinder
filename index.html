@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet"/> <!-- font imported from google NOT STOLE I LOVE YOU GOOGLE API -->
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="shortcut icon" href="pathfinder_logo.png" type="">
+</head>
+<body>
+    <header style="padding-bottom: 24px;">
+        <div class="logo-container">
+            <img src="pathfinder_logo.png" alt="Pathfinder Logo">
+            <span style="font-size: 30px;">Pathfinder</span>
+        </div>
+
+        <nav class="main-nav">
+                <ul class="nav__list">
+                    <div id="EXIT">
+                        <li class="nav__list-item" ><a href="#" onclick="exitConfirmation()" class="nav__link"><img src="images\logout-button.png" alt="Pathfinder Logo" width="40px" height="40px"></a></li>
+                    </div>
+                </ul>
+          </nav>
+    </header>
+
+
+    <main>
+        <section class="quiz-section">
+            <h2 class="headertext">Welcome to the Skill Assessment</h2>
+            <p class="headertext">Answer the following questions to determine your current tech skill level and discover areas for improvement.</p>
+            <form id="skillsQuiz">
+                <div class="question" id="question1">
+                    <p>1. I am interested in creating user interfaces that are visually appealing.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q1" value="-1.0" onchange="showNextQuestion(2)" > Strongly Agree</label>
+                        <label><input type="radio"  name="q1" value="-0.5" onchange="showNextQuestion(2)" > Agree</label>
+                        <label><input type="radio"  name="q1" value="0.0" onchange="showNextQuestion(2)" > Neutral</label>
+                        <label><input type="radio"  name="q1" value="0.5" onchange="showNextQuestion(2)" > Disagree</label>
+                        <label><input type="radio"  name="q1" value="1.0" onchange="showNextQuestion(2)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+<div class="question" id="question2"> 
+                    <p>2. I am comfortable coding in languages such as JavaScript, C++, and Python.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q2" value="1" onchange="showNextQuestion(3)" > Strongly Agree</label>
+                        <label><input type="radio" name="q2" value="0.5" onchange="showNextQuestion(3)" > Agree</label>
+                        <label><input type="radio" name="q2" value="0" onchange="showNextQuestion(3)" > Neutral</label>
+                        <label><input type="radio" name="q2" value="-0.5" onchange="showNextQuestion(3)" > Disagree</label>
+                        <label><input type="radio" name="q2" value="-1" onchange="showNextQuestion(3)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question3">
+                    <p>3. I enjoy the challenge of making a website or application aesthetically pleasing.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q3" value="-1" onchange="showNextQuestion(4)" > Strongly Agree</label>
+                        <label><input type="radio" name="q3" value="-0.5" onchange="showNextQuestion(4)" > Agree</label>
+                        <label><input type="radio" name="q3" value="0" onchange="showNextQuestion(4)" > Neutral</label>
+                        <label><input type="radio" name="q3" value="0.5" onchange="showNextQuestion(4)" > Disagree</label>
+                        <label><input type="radio" name="q3" value="1" onchange="showNextQuestion(4)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question4">
+                    <p>4. I enjoy solving complex problems through programming.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q4" value="1" onchange="showNextQuestion(5)" > Strongly Agree</label>
+                        <label><input type="radio" name="q4" value="0.5" onchange="showNextQuestion(5)" >Agree</label>
+                        <label><input type="radio" name="q4" value="0" onchange="showNextQuestion(5)" > Neutral</label>
+                        <label><input type="radio" name="q4" value="-0.5" onchange="showNextQuestion(5)" > Disagree</label>
+                        <label><input type="radio" name="q4" value="-1" onchange="showNextQuestion(5)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question5">
+                    <p>5. I find satisfaction in creating graphics and visual content.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q5" value="-1" onchange="showNextQuestion(6)" > Strongly Agree</label>
+                        <label><input type="radio" name="q5" value="-0.5" onchange="showNextQuestion(6)" > Agree</label>
+                        <label><input type="radio" name="q5" value="0" onchange="showNextQuestion(6)" > Neutral</label>
+                        <label><input type="radio" name="q5" value="0.5" onchange="showNextQuestion(6)" > Disagree</label>
+                        <label><input type="radio" name="q5" value="1" onchange="showNextQuestion(6)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question6">
+                    <p>6. I am skilled at debugging and troubleshooting code.</p> <!--back end-->
+                    <div class="rating-scale"> 
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q6" value="1" onchange="showNextQuestion(7)" > Strongly Agree</label>
+                        <label><input type="radio" name="q6" value="0.5" onchange="showNextQuestion(7)"> Agree</label>
+                        <label><input type="radio" name="q6" value="0" onchange="showNextQuestion(7)" > Neutral</label>
+                        <label><input type="radio" name="q6" value="-0.5" onchange="showNextQuestion(7)" > Disagree</label>
+                        <label><input type="radio" name="q6" value="-1" onchange="showNextQuestion(7)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question7">
+                    <p>7. I am skilled at using design software such as Adobe Photoshop or Illustrator.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q7" value="-1" onchange="showNextQuestion(8)" > Strongly Agree</label>
+                        <label><input type="radio" name="q7" value="-0.5" onchange="showNextQuestion(8)" > Agree</label>
+                        <label><input type="radio" name="q7" value="0" onchange="showNextQuestion(8)" > Neutral</label>
+                        <label><input type="radio" name="q7" value="0.5" onchange="showNextQuestion(8)" > Disagree</label>
+                        <label><input type="radio" name="q7" value="1" onchange="showNextQuestion(8)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question8">
+                    <p>8. I find satisfaction in optimizing code for better performance.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q8" value="1" onchange="showNextQuestion(9)" > Strongly Agree</label>
+                        <label><input type="radio" name="q8" value="0.5" onchange="showNextQuestion(9)" > Agree</label>
+                        <label><input type="radio" name="q8" value="0" onchange="showNextQuestion(9)" > Neutral</label>
+                        <label><input type="radio" name="q8" value="-0.5" onchange="showNextQuestion(9)" > Disagree</label>
+                        <label><input type="radio" name="q8" value="-1" onchange="showNextQuestion(9)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question9">
+                    <p>9. I enjoy brainstorming and sketching out ideas for new designs.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q9" value="-1" onchange="showNextQuestion(10)" > Strongly Agree</label>
+                        <label><input type="radio" name="q9" value="-0.5" onchange="showNextQuestion(10)" > Agree</label>
+                        <label><input type="radio" name="q9" value="0" onchange="showNextQuestion(10)" > Neutral</label>
+                        <label><input type="radio" name="q9" value="0.5" onchange="showNextQuestion(10)" > Disagree</label>
+                        <label><input type="radio" name="q9" value="1" onchange="showNextQuestion(10)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question10">
+                    <p>10. I enjoy working with databases and managing data.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q10" value="1" onchange="showNextQuestion(11)" > Strongly Agree</label>
+                        <label><input type="radio" name="q10" value="0.5" onchange="showNextQuestion(11)" > Agree</label>
+                        <label><input type="radio" name="q10" value="0" onchange="showNextQuestion(11)" > Neutral</label>
+                        <label><input type="radio" name="q10" value="-0.5" onchange="showNextQuestion(11)" > Disagree</label>
+                        <label><input type="radio" name="q10" value="-1" onchange="showNextQuestion(11)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question11">
+                    <p>11. I am good at choosing colors and fonts that work well together.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q11" value="-1" onchange="showNextQuestion(12)" > Strongly Agree</label>
+                        <label><input type="radio" name="q11" value="-0.5" onchange="showNextQuestion(12)" > Agree</label>
+                        <label><input type="radio" name="q11" value="0" onchange="showNextQuestion(12)" > Neutral</label>
+                        <label><input type="radio" name="q11" value="0.5" onchange="showNextQuestion(12)" > Disagree</label>
+                        <label><input type="radio" name="q11" value="1" onchange="showNextQuestion(12)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question12">
+                    <p>12. I am interested in learning new programming languages and technologies.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q12" value="1" onchange="showNextQuestion(13)" > Strongly Agree</label>
+                        <label><input type="radio" name="q12" value="0.5" onchange="showNextQuestion(13)" > Agree</label>
+                        <label><input type="radio" name="q12" value="0" onchange="showNextQuestion(13)" > Neutral</label>
+                        <label><input type="radio" name="q12" value="-0.5" onchange="showNextQuestion(13)" > Disagree</label>
+                        <label><input type="radio" name="q12" value="-1" onchange="showNextQuestion(13)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question13">
+                    <p>13. I am interested in designing user experiences that are intuitive and engaging.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q13" value="-1" onchange="showNextQuestion(14)" > Strongly Agree</label>
+                        <label><input type="radio" name="q13" value="-0.5" onchange="showNextQuestion(14)" > Agree</label>
+                        <label><input type="radio" name="q13" value="0" onchange="showNextQuestion(14)" > Neutral</label>
+                        <label><input type="radio" name="q13" value="0.5" onchange="showNextQuestion(14)" > Disagree</label>
+                        <label><input type="radio" name="q13" value="1" onchange="showNextQuestion(14)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question14">
+                    <p>14. I am comfortable working with version control systems like Git.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q14" value="1" onchange="showNextQuestion(15)" > Strongly Agree</label>
+                        <label><input type="radio" name="q14" value="0.5" onchange="showNextQuestion(15)" > Agree</label>
+                        <label><input type="radio" name="q14" value="0" onchange="showNextQuestion(15)" > Neutral</label>
+                        <label><input type="radio" name="q14" value="-0.5" onchange="showNextQuestion(15)" > Disagree</label>
+                        <label><input type="radio" name="q14" value="-1" onchange="showNextQuestion(15)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question15">
+                    <p>15. I enjoy working on layout designs for websites and applications.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q15" value="-1" onchange="showNextQuestion(16)" > Strongly Agree</label>
+                        <label><input type="radio" name="q15" value="-0.5" onchange="showNextQuestion(16)" > Agree</label>
+                        <label><input type="radio" name="q15" value="0" onchange="showNextQuestion(16)" > Neutral</label>
+                        <label><input type="radio" name="q15" value="0.5" onchange="showNextQuestion(16)" > Disagree</label>
+                        <label><input type="radio" name="q15" value="1" onchange="showNextQuestion(16)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question16">
+                    <p>16. I enjoy creating algorithms to solve specific problems.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q16" value="1" onchange="showNextQuestion(17)" > Strongly Agree</label>
+                        <label><input type="radio" name="q16" value="0.5" onchange="showNextQuestion(17)" > Agree</label>
+                        <label><input type="radio" name="q16" value="0" onchange="showNextQuestion(17)" > Neutral</label>
+                        <label><input type="radio" name="q16" value="-0.5" onchange="showNextQuestion(17)" > Disagree</label>
+                        <label><input type="radio" name="q16" value="-1" onchange="showNextQuestion(17)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question17">
+                    <p>17. I like to stay updated on the latest design trends and technologies.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q17" value="-1" onchange="showNextQuestion(18)" > Strongly Agree</label>
+                        <label><input type="radio" name="q17" value="-0.5" onchange="showNextQuestion(18)" > Agree</label>
+                        <label><input type="radio" name="q17" value="0" onchange="showNextQuestion(18)" > Neutral</label>
+                        <label><input type="radio" name="q17" value="0.5" onchange="showNextQuestion(18)" > Disagree</label>
+                        <label><input type="radio" name="q17" value="1" onchange="showNextQuestion(18)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question18"> 
+                    <p>18. I am good at understanding and implementing data structures.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q18" value="1" onchange="showNextQuestion(19)" > Strongly Agree</label>
+                        <label><input type="radio" name="q18" value="0.5" onchange="showNextQuestion(19)" > Agree</label>
+                        <label><input type="radio" name="q18" value="0" onchange="showNextQuestion(19)" > Neutral</label>
+                        <label><input type="radio" name="q18" value="-0.5" onchange="showNextQuestion(19)" > Disagree</label>
+                        <label><input type="radio" name="q18" value="-1" onchange="showNextQuestion(19)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question19">
+                    <p>19. I am comfortable using tools like Figma or Sketch for prototyping designs.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q19" value="-1" onchange="showNextQuestion(20)" > Strongly Agree</label>
+                        <label><input type="radio" name="q19" value="-0.5" onchange="showNextQuestion(20)" > Agree</label>
+                        <label><input type="radio" name="q19" value="0" onchange="showNextQuestion(20)" > Neutral</label>
+                        <label><input type="radio" name="q19" value="0.5" onchange="showNextQuestion(20)" > Disagree</label>
+                        <label><input type="radio" name="q19" value="1" onchange="showNextQuestion(20)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question20">
+                    <p>20. I am comfortable working with frameworks and libraries for web development.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q20" value="1" onchange="showNextQuestion(21)" > Strongly Agree</label>
+                        <label><input type="radio" name="q20" value="0.5" onchange="showNextQuestion(21)" > Agree</label>
+                        <label><input type="radio" name="q20" value="0" onchange="showNextQuestion(21)" > Neutral</label>
+                        <label><input type="radio" name="q20" value="-0.5" onchange="showNextQuestion(21)" > Disagree</label>
+                        <label><input type="radio" name="q20" value="-1" onchange="showNextQuestion(21)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question21">
+                    <p>21. I enjoy creating animations and interactive elements for digital content.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q21" value="-1" onchange="showNextQuestion(22)" > Strongly Agree</label>
+                        <label><input type="radio" name="q21" value="-0.5" onchange="showNextQuestion(22)" > Agree</label>
+                        <label><input type="radio" name="q21" value="0" onchange="showNextQuestion(22)" > Neutral</label>
+                        <label><input type="radio" name="q21" value="0.5" onchange="showNextQuestion(22)" > Disagree</label>
+                        <label><input type="radio" name="q21" value="1" onchange="showNextQuestion(22)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question22">
+                    <p>22. I enjoy working on backend development tasks.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q22" value="1" onchange="showNextQuestion(23)" > Strongly Agree</label>
+                        <label><input type="radio" name="q22" value="0.5" onchange="showNextQuestion(23)" > Agree</label>
+                        <label><input type="radio" name="q22" value="0" onchange="showNextQuestion(23)" > Neutral</label>
+                        <label><input type="radio" name="q22" value="-0.5" onchange="showNextQuestion(23)" > Disagree</label>
+                        <label><input type="radio" name="q22" value="-1" onchange="showNextQuestion(23)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question23">
+                    <p>23. I am good at creating wireframes and mockups for new projects.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q23" value="-1" onchange="showNextQuestion(24)" > Strongly Agree</label>
+                        <label><input type="radio" name="q23" value="-0.5" onchange="showNextQuestion(24)" > Agree</label>
+                        <label><input type="radio" name="q23" value="0" onchange="showNextQuestion(24)" > Neutral</label>
+                        <label><input type="radio" name="q23" value="0.5" onchange="showNextQuestion(24)" > Disagree</label>
+                        <label><input type="radio" name="q23" value="1" onchange="showNextQuestion(24)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question24">
+                    <p>24. I am interested in cybersecurity and protecting systems from threats.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q24" value="1" onchange="showNextQuestion(25)" > Strongly Agree</label>
+                        <label><input type="radio" name="q24" value="0.5" onchange="showNextQuestion(25)" > Agree</label>
+                        <label><input type="radio" name="q24" value="0" onchange="showNextQuestion(25)" > Neutral</label>
+                        <label><input type="radio" name="q24" value="-0.5" onchange="showNextQuestion(25)" > Disagree</label>
+                        <label><input type="radio" name="q24" value="-1" onchange="showNextQuestion(25)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question25">
+                    <p>25. I like to think about the user journey and how to improve it through design.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q25" value="-1" onchange="showNextQuestion(26)" > Strongly Agree</label>
+                        <label><input type="radio" name="q25" value="-0.5" onchange="showNextQuestion(26)" > Agree</label>
+                        <label><input type="radio" name="q25" value="0" onchange="showNextQuestion(26)" > Neutral</label>
+                        <label><input type="radio" name="q25" value="0.5" onchange="showNextQuestion(26)" > Disagree</label>
+                        <label><input type="radio" name="q25" value="1" onchange="showNextQuestion(26)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question26">
+                    <p>26. I am good at writing clean, maintainable code.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q26" value="1" onchange="showNextQuestion(27)" > Strongly Agree</label>
+                        <label><input type="radio" name="q26" value="0.5" onchange="showNextQuestion(27)" > Agree</label>
+                        <label><input type="radio" name="q26" value="0" onchange="showNextQuestion(27)" > Neutral</label>
+                        <label><input type="radio" name="q26" value="-0.5" onchange="showNextQuestion(27)" > Disagree</label>
+                        <label><input type="radio" name="q26" value="-1" onchange="showNextQuestion(27)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question27">
+                    <p>27. I enjoy collaborating with others on design projects.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q27" value="-1" onchange="showNextQuestion(28)" > Strongly Agree</label>
+                        <label><input type="radio" name="q27" value="-0.5" onchange="showNextQuestion(28)" > Agree</label>
+                        <label><input type="radio" name="q27" value="0" onchange="showNextQuestion(28)" > Neutral</label>
+                        <label><input type="radio" name="q27" value="0.5" onchange="showNextQuestion(28)" > Disagree</label>
+                        <label><input type="radio" name="q27" value="1" onchange="showNextQuestion(28)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question28">
+                    <p>28. I enjoy collaborating with others on software development projects.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q28" value="1" onchange="showNextQuestion(29)" > Strongly Agree</label>
+                        <label><input type="radio" name="q28" value="0.5" onchange="showNextQuestion(29)" > Agree</label>
+                        <label><input type="radio" name="q28" value="0" onchange="showNextQuestion(29)" > Neutral</label>
+                        <label><input type="radio" name="q28" value="-0.5" onchange="showNextQuestion(29)" > Disagree</label>
+                        <label><input type="radio" name="q28" value="-1" onchange="showNextQuestion(29)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question29">
+                    <p>29. I am passionate about creating designs that are both functional and beautiful.</p> <!--front end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q29" value="-1" onchange="showNextQuestion(30)" > Strongly Agree</label>
+                        <label><input type="radio" name="q29" value="-0.5" onchange="showNextQuestion(30)" > Agree</label>
+                        <label><input type="radio" name="q29" value="0" onchange="showNextQuestion(30)" > Neutral</label>
+                        <label><input type="radio" name="q29" value="0.5" onchange="showNextQuestion(30)" > Disagree</label>
+                        <label><input type="radio" name="q29" value="1" onchange="showNextQuestion(30)" > Strongly Disagree</label>
+                    </div>
+                </div>
+
+
+<div class="question" id="question30"> 
+                    <p>30. I am passionate about developing software that meets user needs.</p> <!--back end-->
+                    <div class="rating-scale">
+                        <!-- Add onChange to move to next question -->
+                        <label><input type="radio" name="q30" value="1" onchange="showNextQuestion(31)" > Strongly Agree</label>
+                        <label><input type="radio" name="q30" value="0.5" onchange="showNextQuestion(31)"> Agree</label>
+                        <label><input type="radio" name="q30" value="0" onchange="showNextQuestion(31)"> Neutral</label>
+                        <label><input type="radio" name="q30" value="-0.5" onchange="showNextQuestion(31)"> Disagree</label>
+                        <label><input type="radio" name="q30" value="-1" onchange="showNextQuestion(31)"> Strongly Disagree</label>
+                    </div>
+                </div>
+                
+<div class="question" id="question31"> 
+                <center><p>CAREER SURVEY FINISHED</p></center> <!--END-->
+                    <div id="button-container">
+                        <center><button type="button" onclick="scoreCalc()" class="btnSub">Submit</button></center>
+                    </div>
+                </div>
+               
+            </form>
+
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="comms-holder" id="contacts-container">
+          <center><h4>CONTACT US</h4></center>
+          <ul class="wrapper">
+            <li class="icon facebook">
+              <span class="tooltip">Facebook</span>
+              <svg
+                viewBox="0 0 320 512"
+                height="1.2em"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                ></path>
+              </svg>
+            </li>
+            <li class="icon twitter">
+              <span class="tooltip">Twitter</span>
+              <svg
+                height="1.8em"
+                fill="currentColor"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+                class="twitter"
+              >
+                <path
+                  d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"
+                ></path>
+              </svg>
+            </li>
+            <li class="icon instagram">
+              <span class="tooltip">Instagram</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="1.2em"
+                fill="currentColor"
+                class="bi bi-instagram"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                ></path>
+              </svg>
+            </li>
+          </ul>      
+        </div>
+          <center> <p>© 2024 Pathfinder. All rights reserved.</p></center>
+        </footer>
+
+    <script src="js\quiz.js"></script>
+    <script>
+    // JavaScript to handle showing next question
+    function showNextQuestion(id) {
+        var current = document.getElementById('question' + (id - 1));
+        var next = document.getElementById('question' + id);
+        if(current) current.style.display = 'none';
+        if(next) next.style.display = 'block';
+        if (id == 31) {
+            const head = document.querySelectorAll(".headertext");
+            for (let x = 0; x < head.length; x++) {
+                head[x].innerText = "";
+            }
+        }
+    }
+
+    // Initialize the first question to be visible
+    document.addEventListener('DOMContentLoaded', function() {
+        showNextQuestion(1); // Start with question 1 visible
+    });
+    </script>
+
+</body>
+</html>
